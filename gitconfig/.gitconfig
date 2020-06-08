@@ -1,0 +1,28 @@
+[user]
+	name = Stanisław Bugalski
+	email =
+
+[core]
+	symlinks = true
+	autocrlf = input
+	eol = lf
+
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+	showbranch = auto
+
+[alias]
+	amend = commit --amend
+	st = status
+
+# folder specific git config
+[includeIf "gitdir:~/git/src/github.com/"]
+	path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/git/src/dev.azure.com/"]
+	path = ~/.gitconfig-private
