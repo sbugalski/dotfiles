@@ -23,7 +23,9 @@ New-Alias -Name k -Value kubectl -Force
 function global:Run-KubeAlpine {
   [CmdletBinding()]
   [Alias('kalp')]
-  [Parameter(ValueFromRemainingArguments = $true)]$params
+  param (
+    [Parameter(ValueFromRemainingArguments = $true)]$params
+  )
   & kubectl run alpine --rm=true -it --image=alpine sh $params
 }
 
