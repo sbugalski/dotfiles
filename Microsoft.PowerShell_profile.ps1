@@ -16,3 +16,7 @@ Import-Module 'oh-my-posh'
 # oh-my-posh settings
 Set-Theme Paradox
 $DefaultUser = $env:USERNAME
+
+# Aliases
+New-Alias -Name k -Value kubectl -Force
+New-Alias -Name kalp -Value "kubectl run alpine --rm=true -it --image=alpine sh" -Force
