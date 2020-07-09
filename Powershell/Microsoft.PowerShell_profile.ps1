@@ -16,7 +16,7 @@ $env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$MyMo
 
 # Modules
 
-## Chocolatey profie
+## Chocolatey module
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
@@ -35,10 +35,11 @@ Remove-PSReadlineKeyHandler 'Ctrl+t'
 Import-Module PSFzf
 
 # Autocomplete
-# Shows navigable menu of all options when hitting Tab
+
+## Shows navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
-# Autocompletion for arrow keys
+## Autocompletion for arrow keys
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 

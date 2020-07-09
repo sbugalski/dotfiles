@@ -1,0 +1,50 @@
+{
+  //telemetry
+  "telemetry.enableTelemetry": false,
+
+  //git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  //editor
+  "editor.minimap.maxColumn": 75,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.size": "fit",
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+  "editor.renderWhitespace": "boundary",
+
+  //diffEditor
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  //window
+  "window.zoomLevel": 0,
+
+  //files
+  "files.defaultLanguage": "powershell",
+  "files.trimTrailingWhitespace": true,
+
+  //explorer
+  "explorer.compactFolders": false,
+
+  //workbench
+  "workbench.iconTheme": "material-icon-theme",
+
+  //powershell
+  "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
+
+  //language specific
+  "[json]": {
+    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.tabSize": 4
+  },
+  "[powershell]": {
+    "editor.tabSize": 4
+  }
+}
