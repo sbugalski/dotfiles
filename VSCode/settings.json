@@ -17,7 +17,7 @@
   "editor.renderWhitespace": "boundary",
 
   //diffEditor
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
 
   //window
   "window.zoomLevel": 0,
@@ -37,7 +37,7 @@
 
   //language specific
   "[json]": {
-    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.defaultFormatter": "vscode.json-language-features",
     "editor.quickSuggestions": {
       "strings": true
     },
@@ -46,5 +46,28 @@
   },
   "[powershell]": {
     "editor.tabSize": 4
-  }
+  },
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "markdownlint.customRules": [
+    "{docsmsft.docs-linting}/markdownlint-custom-rules/rules.js"
+  ],
+  "markdownlint.config": {
+    "MD028": false
+  },
+  "yaml.schemas": {
+    "file:///toc.schema.json": "/toc\\.yml/i"
+  },
+  "markdown-preview-enhanced.liveUpdate": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "files.watcherExclude": {
+    //"**/.git/objects/**": true,
+    //"**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "git.enableCommitSigning": true,
+  "cSpell.enabled": true
 }
