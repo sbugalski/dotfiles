@@ -1,28 +1,57 @@
 [user]
-	name = Stanisław Bugalski
-	email =
+  name = Stanisław Bugalski
+  email =
 
+	signingkey =
 [core]
-	symlinks = true
-	autocrlf = input
-	eol = lf
+  symlinks = true
+  autocrlf = true
+  eol = lf
+  excludesfile = ~/gitignore_global
+  editor = code --wait
+
+[diff]
+  tool = vscode
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+  tool = vscode
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 
 [color]
-	status = auto
-	diff = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
-	showbranch = auto
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+  showbranch = auto
 
 [alias]
-	amend = commit --amend
-	st = status
+  amend = commit --amend
+  st = status
 
-# folder specific git config
 [includeIf "gitdir:~/git/src/github.com/"]
-	path = ~/.gitconfig-github
+  path = ~/.gitconfig-github
 
 [includeIf "gitdir:~/git/src/dev.azure.com/"]
-	path = ~/.gitconfig-private
+  path = ~/.gitconfig-private
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[pull]
+  rebase = false
+
+[commit]
+  gpgsign = true
+
+[gpg]
+  program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
