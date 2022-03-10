@@ -60,6 +60,9 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 #Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 #Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
+# Remove previous command history "UpArrow" at F8 key
+Remove-PSReadLineKeyHandler -Chord F8
+
 Set-PSReadlineKeyHandler -Key UpArrow -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::HistorySearchBackward()
     [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
@@ -74,10 +77,16 @@ Set-PSReadlineKeyHandler -Key DownArrow -ScriptBlock {
 ## Connect-Office365
 . $env:USERPROFILE\git\src\github.com\sbugalski\dotfiles\Powershell\Connect-Office365.ps1
 
+## azctx
+## TODO
+<#function global:azctx {
+    Select-AzContext (Get-AzContext -ListAvailable | Invoke-Fzf)
+}#>
+
 ## kubectl
 . $env:USERPROFILE\git\src\github.com\sbugalski\dotfiles\Powershell\kubectl_aliases.ps1
 ### using k as alias, so it supports unambiguous parameters, like "-o"
-New-Alias -Name k -Value kubectl -Force
+New-Alias -Name k -Value kubectl -Description "kubectl k alias" -Option AllScope -Force
 
 New-Alias -Name open -Value Invoke-Item -Description "Open folder or item with default program alias" -Option AllScope -Force
 New-Alias -Name encode64 -Value ConvertTo-Base64 -Description "ConvertTo-Base64 alias" -Option AllScope -Force
@@ -155,7 +164,7 @@ function global:Select-KubeNamespace {
 }
 
 function global:ConvertTo-Base64 {
-    #[Alias('ct64')]
+    [Alias('ct64')]
     param (
         [Parameter(Mandatory = $true,
             ValueFromPipeline = $true)]
@@ -168,7 +177,7 @@ function global:ConvertTo-Base64 {
 }
 
 function global:ConvertFrom-Base64 {
-    #[Alias('cf64')]
+    [Alias('base64')]
     param (
         [Parameter(Mandatory = $true,
             ValueFromPipeline = $true)]
