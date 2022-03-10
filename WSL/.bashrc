@@ -1,6 +1,6 @@
 # Symlinks
 ## Kubectl
-ln -s ~/winhome/.kube ~
+ln -s ~/winhome/.kube ~ > /dev/null 2>&1
 
 # Tools
 ## Kubectl
