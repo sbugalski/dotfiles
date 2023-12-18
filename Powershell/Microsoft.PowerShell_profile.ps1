@@ -76,6 +76,8 @@ Set-PSReadlineKeyHandler -Key DownArrow -ScriptBlock {
 # Aliases
 ## Connect-Office365
 . $env:USERPROFILE\git\src\github.com\sbugalski\dotfiles\Powershell\Connect-Office365.ps1
+. $env:USERPROFILE\git\src\github.com\sbugalski\dotfiles\Powershell\kubectl_aliases.ps1
+. $env:USERPROFILE\git\src\github.com\sbugalski\dotfiles\Powershell\Clone-GitRepo.ps1
 
 ## azctx
 ## TODO
